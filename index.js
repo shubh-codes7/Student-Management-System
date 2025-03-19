@@ -119,6 +119,60 @@ function render(data){
         `
 })}
 
+function sortGender(){
+    let femalesArr = arr.filter(a => a.gender ==="Female")
+    let malesArr = arr.filter(a => a.gender ==="Male")
+
+    tbody.innerHTML = ``
+    femalesArr.forEach( student => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${student.id}</td>
+                <td class="name"><img src=${student.img_src} width="20px">${student.first_name} ${student.last_name}</td>
+                <td id="gender">${student.gender}</td>
+                <td id="class">${student.class}</td>
+                <td id="marks">${student.marks}</td>
+                <td id="pass">${student.passing ? "Passed" : "Failed"}</td>
+                <td>${student.email}</td>
+            </tr>
+         
+            
+        `
+    })
+
+    tbody.innerHTML += `<br><br>
+          
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Class</th>
+              <th>Marks</th>
+              <th>Passing</th>
+              <th>Email</th>
+            </tr>
+          `
+    malesArr.forEach( student => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${student.id}</td>
+                <td class="name"><img src=${student.img_src} width="20px">${student.first_name} ${student.last_name}</td>
+                <td id="gender">${student.gender}</td>
+                <td id="class">${student.class}</td>
+                <td id="marks">${student.marks}</td>
+                <td id="pass">${student.passing ? "Passed" : "Failed"}</td>
+                <td>${student.email}</td>
+            </tr>
+         
+            
+        `
+    })
+    
+}
+
+
+
+
 function sortAz(){
     arr.sort((a, b) => a.first_name.localeCompare(b.first_name))
     render(arr)
@@ -141,13 +195,8 @@ function sortClass(){
 }
 
 function sortPassing(){
-    arr.sort((a, b) => b.passing - a.passing)
-    render(arr)
-}
-
-function sortGender(){
-    arr.sort((a, b) => a.gender.localeCompare(b.gender))
-    render(arr)
+    let filterArr = arr.filter(a => a.passing === true)
+    render(filterArr)
 }
 
 function search(){
