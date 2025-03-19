@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h4>Student Portal</h4>
+    </header>
+    <main>
+      <div id="searchDiv">
+        <input type="text" placeholder="search" id="input" onkeyup="search()"/>
+        <button>Search</button>
+      </div>
+      <div id="buttons">
+        <button onclick="sortAz()">Sort A&rarr;Z</button>
+        <button onclick="sortZa()">Sort Z&rarr;A</button>
+        <button onclick="sortMarks()">Sort By Marks</button>
+        <button onclick="sortPassing()">Sort By Passing</button>
+        <button onclick="sortClass()">Sort By Class</button>
+        <button onclick="sortGender()">Sort By Gender</button>
+      </div>
+
+      <div id="table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Class</th>
+              <th>Marks</th>
+              <th>Passing</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- <tr>
+              <td>1</td>
+              <td>Shubham</td>
+              <td>Male</td>
+              <td>12th</td>
+              <td>100</td>
+              <td>true</td>
+              <td>xyz@gmail.com</td>
+            </tr> -->
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
